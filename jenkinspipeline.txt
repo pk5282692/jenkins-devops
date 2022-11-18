@@ -1,0 +1,17 @@
+node {
+
+	stage ('scm') {
+	     // git clone
+	     git 'https://github.com/pk5282692/jenkins-devops.git"
+	}
+
+	stage ('build the package') {
+	     // mvn package
+	     sh 'mvn clean package'
+	}
+
+	stage (archival') {
+	     // archiving artifacts
+	     archieve 'taget/*.jar'
+	}
+}
